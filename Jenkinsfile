@@ -7,18 +7,7 @@ pipeline {
         sleep 2
       }
     }
-    stage('Get Input') {
-      input {
-        message 'Should we continue?'
-        id 'Yes, we should.'
-        parameters {
-          string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-        }
-      }
-      steps {
-        echo "Hello, ${PERSON}, nice to meet you."
-      }
-    }
+
         stage('Run Script') {
             steps {
                 echo 'Hello World'
@@ -45,5 +34,18 @@ pipeline {
         }
       }
     }
+    stage('Get Input') {
+      input {
+        message 'Should we continue?'
+        id 'Yes, we should.'
+        parameters {
+          string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+        }
+      }
+      steps {
+        echo "Hello, ${PERSON}, nice to meet you."
+      }
+    }
+
   }
 }

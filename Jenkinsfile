@@ -7,10 +7,13 @@ pipeline {
         sleep 15
       }
     }
-    stage('Stage2') {
-      steps {
-        mail(subject: 'Testing', to: 'gulshanksingla@gmail.com', body: 'Testing BlueOceans')
-      }
+    stage('Deploy alpha') {
+        //execute deployment in parallel.
+        parallel(
+                'us-west-2-lab': {
+                    echo 'Stage: Deploy alpha us-west-2-lab started'
+                }
+        )
     }
   }
 }

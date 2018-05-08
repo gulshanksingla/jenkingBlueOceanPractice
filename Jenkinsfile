@@ -14,6 +14,11 @@ pipeline {
             echo 'Stage: Deploy alpha us-west-2-lab started'
           }
         }
+        stage('Print Env Variables') {
+          steps {
+            sh 'echo env'
+          }
+        }
       }
     }
   }

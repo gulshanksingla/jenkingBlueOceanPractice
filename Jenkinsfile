@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Stage 1 started'
         sleep 2
-        input(message: 'Enter stage:', id: 'stage')
+        input(message: 'Enter stage:', id: 'stage', ok: 'ok', submitter: 'Submitter', submitterParameter: 'SubmitterParameter')
       }
     }
     stage('Deploy alpha') {

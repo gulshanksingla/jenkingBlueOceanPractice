@@ -8,12 +8,13 @@ pipeline {
       }
     }
     stage('Deploy alpha') {
-        //execute deployment in parallel.
+      steps {
         parallel(
                 'us-west-2-lab': {
                     echo 'Stage: Deploy alpha us-west-2-lab started'
                 }
         )
+      }
     }
   }
 }

@@ -7,5 +7,10 @@ pipeline {
         sleep 15
       }
     }
+    stage('Stage2') {
+      steps {
+        mail(subject: 'Testing', to: 'gulshanksingla@gmail.com', body: 'Testing BlueOceans')
+      }
+    }
   }
 }

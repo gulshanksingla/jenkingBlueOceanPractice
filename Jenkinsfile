@@ -4,7 +4,7 @@ pipeline {
     stage('Stage1') {
       steps {
         echo 'Stage 1 started'
-        sleep 15
+        sleep 2
       }
     }
     stage('Deploy alpha') {
@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Print Env Variables') {
           steps {
-            sh 'echo env'
+            sh 'echo ${env}'
           }
         }
       }

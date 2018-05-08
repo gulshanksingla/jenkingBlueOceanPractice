@@ -7,7 +7,7 @@ pipeline {
         sleep 2
       }
     }
-    stage(‘Get Input’) {
+    stage('Get Input') {
       input {
         message 'Should we continue?'
         id 'Yes, we should.'
@@ -19,10 +19,9 @@ pipeline {
         echo "Hello, ${PERSON}, nice to meet you."
       }
     }
-        stage(‘Run Script’) {
+        stage('Run Script') {
             steps {
                 echo 'Hello World'
-
                 script {
                     def browsers = ['chrome', 'firefox']
                     for (int i = 0; i < browsers.size(); ++i) {

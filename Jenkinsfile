@@ -19,18 +19,18 @@ pipeline {
         echo "Hello, ${PERSON}, nice to meet you."
       }
     }
-        stage('Run Script') {
-            steps {
-                echo 'Hello World'
-                script {
-                    def browsers = ['chrome', 'firefox']
-                    for (int i = 0; i < browsers.size(); ++i) {
-                        echo "Testing the ${browsers[i]} browser"
-                    }
-                }
-            }
+    stage('Run Script') {
+      steps {
+        echo 'Hello World'
+        script {
+          def browsers = ['chrome', 'firefox']
+          for (int i = 0; i < browsers.size(); ++i) {
+            echo "Testing the ${browsers[i]} browser"
+          }
         }
 
+      }
+    }
     stage('Deploy alpha') {
       parallel {
         stage('us-west-2-lab') {
